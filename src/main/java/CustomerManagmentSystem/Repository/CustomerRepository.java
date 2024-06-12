@@ -54,22 +54,22 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     void updateCustomerPhoneNumber(@PathVariable String phoneNumber, Long id);
 
     @Query("DELETE FROM Customer WHERE name = :name, firstname = :firstName, lastname = :lastName, email = :email, phonenumber = :phoneNumber")
-    void DeleteCustomer(@PathVariable String name, String firstName, String LastName, String email, String phoneNumber);
+    void deleteCustomer(@PathVariable String name, String firstName, String LastName, String email, String phoneNumber);
 
     @Query("DELETE FROM Customer WHERE name = :name")
-    void DeleteCustomerByName(@PathVariable String name);
+    void deleteCustomerByName(@PathVariable String name);
 
     @Query("DELETE FROM Customer WHERE firstname = :firstName")
-    void DeleteCustomerByFirstName(@PathVariable String firstName);
+    void deleteCustomerByFirstName(@PathVariable String firstName);
 
     @Query("DELETE FROM Customer WHERE lastname = :lastName")
-    void DeleteCustomerByLastName(@PathVariable String LastName);
+    void deleteCustomerByLastName(@PathVariable String LastName);
 
     @Query("DELETE FROM Customer WHERE email = :email")
-    void DeleteCustomerByEmail(@PathVariable String email);
+    void deleteCustomerByEmail(@PathVariable String email);
 
     @Query("DELETE FROM Customer WHERE phonenumber = :phoneNumber")
-    void DeleteCustomerByPhoneNumber(@PathVariable String phoneNumber);
+    void deleteCustomerByPhoneNumber(@PathVariable String phoneNumber);
 
 
 
