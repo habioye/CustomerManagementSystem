@@ -53,6 +53,30 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     @Query("UPDATE Customer SET phonenumber = :phoneNumber WHERE id = :id")
     void updateCustomerPhoneNumber(@PathVariable String phoneNumber, Long id);
 
+    @Query("DELETE FROM Customer WHERE name = :name, firstname = :firstName, lastname = :lastName, email = :email, phonenumber = :phoneNumber")
+    void DeleteCustomer(@PathVariable String name, String firstName, String LastName, String email, String phoneNumber);
+
+    @Query("DELETE FROM Customer WHERE name = :name")
+    void DeleteCustomerByName(@PathVariable String name);
+
+    @Query("DELETE FROM Customer WHERE firstname = :firstName")
+    void DeleteCustomerByFirstName(@PathVariable String firstName);
+
+    @Query("DELETE FROM Customer WHERE lastname = :lastName")
+    void DeleteCustomerByLastName(@PathVariable String LastName);
+
+    @Query("DELETE FROM Customer WHERE email = :email")
+    void DeleteCustomerByEmail(@PathVariable String email);
+
+    @Query("DELETE FROM Customer WHERE phonenumber = :phoneNumber")
+    void DeleteCustomerByPhoneNumber(@PathVariable String phoneNumber);
+
+
+
+
+
+
+
 
 
 //    @Query("SELECT c FROM Customer c WHERE c.name = :name")
